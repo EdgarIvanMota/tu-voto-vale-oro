@@ -1,0 +1,2136 @@
+/*====================================================
+            ORO Y VERDE
+      Landing Premium v1.0
+=====================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffffff;
+
+    color:#202020;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+/*==========================
+      VARIABLES
+==========================*/
+
+:root{
+
+    --gold:#D4AF37;
+
+    --goldLight:#FFD700;
+
+    --goldSoft:#FFE98A;
+
+    --goldDark:#A87B00;
+
+    --green:#0B6E3B;
+
+    --greenLight:#28b463;
+
+    --white:#ffffff;
+
+    --dark:#111111;
+
+    --gray:#666666;
+
+}
+
+/*==========================
+    FONDO PRINCIPAL
+==========================*/
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+radial-gradient(circle at 10% 20%,
+rgba(212,175,55,.15),
+transparent 25%),
+
+radial-gradient(circle at 90% 10%,
+rgba(255,215,0,.12),
+transparent 30%),
+
+radial-gradient(circle at 80% 80%,
+rgba(11,110,59,.10),
+transparent 35%),
+
+linear-gradient(
+180deg,
+#ffffff 0%,
+#fffef8 40%,
+#ffffff 100%
+);
+
+z-index:-100;
+
+}
+
+/*==========================
+      GLOW GENERAL
+==========================*/
+
+.backgroundGlow{
+
+position:fixed;
+
+width:800px;
+
+height:800px;
+
+background:radial-gradient(circle,
+rgba(255,215,0,.28),
+transparent 70%);
+
+filter:blur(70px);
+
+top:-250px;
+
+right:-150px;
+
+animation:glowMove 18s ease-in-out infinite;
+
+z-index:-5;
+
+}
+
+/*==========================
+      HERO
+==========================*/
+
+.hero{
+
+min-height:100vh;
+
+width:100%;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+padding:0 8%;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/*==========================
+      NAVBAR
+==========================*/
+
+nav{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:28px 9%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+z-index:100;
+
+}
+
+.logo{
+
+font-family:'Cinzel',serif;
+
+font-size:34px;
+
+font-weight:900;
+
+letter-spacing:2px;
+
+}
+
+.gold{
+
+color:var(--gold);
+
+}
+
+.green{
+
+color:var(--green);
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:45px;
+
+list-style:none;
+
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+font-size:15px;
+
+font-weight:600;
+
+color:#222;
+
+transition:.35s;
+
+position:relative;
+
+}
+
+nav ul li a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-6px;
+
+width:0;
+
+height:2px;
+
+background:var(--gold);
+
+transition:.35s;
+
+}
+
+nav ul li a:hover{
+
+color:var(--goldDark);
+
+}
+
+nav ul li a:hover::after{
+
+width:100%;
+
+}
+
+/*==========================
+      CONTENEDOR HERO
+==========================*/
+
+.heroContainer{
+
+width:100%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+gap:40px;
+
+}
+
+/*==========================
+      LADO IZQUIERDO
+==========================*/
+
+.heroLeft{
+
+    z-index:10;
+
+}
+
+.heroBadge{
+
+    display:inline-flex;
+    align-items:center;
+    padding:10px 24px;
+    border-radius:60px;
+    background:rgba(255,215,0,.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(212,175,55,.25);
+    font-size:14px;
+    font-weight:600;
+    color:var(--goldDark);
+    margin-bottom:35px;
+
+}
+
+.heroLeft h3{
+
+    font-size:55px;
+    font-weight:700;
+    letter-spacing:8px;
+    color:#202020;
+    text-transform:uppercase;
+    position:relative;
+
+    text-shadow:
+
+    0 3px 0 rgba(255,255,255,.9),
+
+    0 12px 25px rgba(0,0,0,.12);
+
+}
+
+.heroLeft h1{
+
+    font-family:'Cinzel';
+    font-size:110px;
+    line-height:.95;
+    font-weight:900;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #8B6914 0%,
+
+        #FFD700 20%,
+
+        #FFF7C2 40%,
+
+        #FFD700 60%,
+
+        #8B6914 100%
+
+    );
+
+    background-size:400%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:goldText 6s linear infinite;
+
+    letter-spacing:3px;
+
+    text-shadow:
+
+    0 0 15px rgba(255,215,0,.25),
+
+    0 0 40px rgba(255,215,0,.15);
+
+}
+
+.heroLeft h3{
+
+    font-size:55px;
+    font-weight:700;
+    letter-spacing:8px;
+    color:#202020;
+    text-transform:uppercase;
+    position:relative;
+
+    text-shadow:
+        0 3px 0 rgba(255,255,255,.9),
+        0 12px 25px rgba(0,0,0,.12);
+
+}
+
+.heroLeft p{
+
+margin-top:30px;
+
+font-size:30px;
+
+line-height:1.7;
+
+max-width:720px;
+
+color:#5d5d5d;
+
+font-weight:400;
+
+animation:fadeUp 1.8s;
+
+}
+
+.heroButtons{
+
+    display:flex;
+    gap:25px;
+    margin-top:45px;
+
+}
+
+/*=========================================
+      HERO DERECHO
+=========================================*/
+
+.heroRight{
+
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:700px;
+
+}
+
+/*======================================
+        HERO PREMIUM
+======================================*/
+
+.heroRight{
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:760px;
+
+overflow:visible;
+
+}
+
+
+/* Halo principal */
+
+.heroGlow{
+
+position:absolute;
+
+width:820px;
+
+height:820px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,
+rgba(255,215,0,.45),
+rgba(255,215,0,.08),
+transparent 70%);
+
+filter:blur(25px);
+
+animation:glowPulse 6s ease-in-out infinite;
+
+}
+
+
+/* Moneda */
+
+.goldCoin{
+
+position:relative;
+
+width:500px;
+
+height:500px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+
+radial-gradient(circle at 30% 30%,
+
+#FFF6C5,
+
+#FFD700 22%,
+
+#E5B700 45%,
+
+#C69500 70%,
+
+#8B6914 100%);
+
+box-shadow:
+
+0 0 70px rgba(255,215,0,.55),
+
+0 25px 80px rgba(212,175,55,.45),
+
+inset 0 8px 25px rgba(255,255,255,.55),
+
+inset 0 -20px 35px rgba(0,0,0,.18);
+
+animation:coinFloat 6s ease-in-out infinite;
+
+z-index:5;
+
+}
+
+.goldCoin::before{
+
+content:"";
+
+position:absolute;
+
+inset:12px;
+
+border-radius:50%;
+
+border:6px solid rgba(255,255,255,.35);
+
+}
+
+.goldCoin::after{
+
+content:"";
+
+position:absolute;
+
+inset:-18px;
+
+border-radius:50%;
+
+border:2px solid rgba(212,175,55,.30);
+
+animation:ringRotate 25s linear infinite;
+
+}
+
+.heroClover{
+
+width:750px;
+
+filter:
+drop-shadow(0 10px 18px rgba(0,0,0,.30))
+drop-shadow(0 0 30px rgba(255,215,0,.45));
+
+animation:
+cloverFloat 5s ease-in-out infinite;
+
+}
+@keyframes coinFloat{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+@keyframes cloverFloat{
+
+0%{
+
+transform:rotate(-2deg) scale(1);
+
+}
+
+50%{
+
+transform:rotate(2deg) scale(1.05);
+
+}
+
+100%{
+
+transform:rotate(-2deg) scale(1);
+
+}
+
+}
+
+@keyframes glowPulse{
+
+0%{
+
+transform:scale(.95);
+
+opacity:.6;
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(.95);
+
+opacity:.6;
+
+}
+
+}
+
+@keyframes ringRotate{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/*=========================================
+        CIRCULOS DECORATIVOS
+=========================================*/
+
+.circleOne{
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(212,175,55,.18);
+
+    animation:rotateSlow 25s linear infinite;
+
+}
+
+.circleTwo{
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    border:2px dashed rgba(255,215,0,.30);
+
+    animation:rotateReverse 18s linear infinite;
+
+}
+
+.circleThree{
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(11,110,59,.25);
+
+    animation:pulseCircle 5s ease infinite;
+
+}
+
+/*=========================================
+          ANILLO DORADO
+=========================================*/
+
+.goldRing{
+
+    position:absolute;
+
+    width:560px;
+
+    height:560px;
+
+    border-radius:50%;
+
+    border:10px solid rgba(255,215,0,.08);
+
+    box-shadow:
+
+    0 0 80px rgba(255,215,0,.25),
+
+    inset 0 0 60px rgba(255,215,0,.20);
+
+    animation:ringRotate 30s linear infinite;
+
+}
+
+/*=========================================
+          TREBOL
+=========================================*/
+
+.clover{
+
+position:absolute;
+
+font-size:230px;
+
+color:#FFD700;
+
+z-index:50;
+
+text-shadow:
+
+0 8px 0 #B8860B,
+
+0 16px 25px rgba(0,0,0,.25),
+
+0 0 30px rgba(255,215,0,.60),
+
+0 0 80px rgba(255,215,0,.45);
+
+animation:
+
+floating 6s ease-in-out infinite,
+
+glowPulse 5s ease infinite;
+
+transition:.25s;
+
+}
+
+/*=========================================
+            DESTELLOS
+=========================================*/
+
+.light1,
+.light2,
+.light3{
+
+position:absolute;
+
+width:14px;
+
+height:14px;
+
+background:var(--goldLight);
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 20px gold,
+
+0 0 40px gold,
+
+0 0 60px gold;
+
+}
+
+.light1{
+
+top:120px;
+
+left:120px;
+
+animation:lightMove1 5s infinite;
+
+}
+
+.light2{
+
+right:130px;
+
+top:240px;
+
+animation:lightMove2 7s infinite;
+
+}
+
+.light3{
+
+bottom:130px;
+
+left:200px;
+
+animation:lightMove3 8s infinite;
+
+}
+
+/*=========================================
+          BOTONES
+=========================================*/
+
+.heroButtons{
+
+display:flex;
+
+gap:25px;
+
+margin-top:45px;
+
+}
+
+/*=========================
+      BOTÓN DORADO
+==========================*/
+
+.btnGold{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:22px 46px;
+
+border-radius:60px;
+
+background:linear-gradient(135deg,#FFD700,#D4AF37);
+
+color:#fff;
+
+font-size:20px;
+
+font-weight:700;
+
+text-decoration:none;
+
+box-shadow:0 20px 45px rgba(212,175,55,.45);
+
+transition:.4s;
+
+}
+
+.btnGold:hover{
+
+transform:translateY(-8px) scale(1.05);
+
+box-shadow:0 30px 60px rgba(212,175,55,.6);
+
+}
+
+
+/*=========================
+     BOTÓN SECUNDARIO
+==========================*/
+
+.btnText{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:20px;
+
+font-weight:700;
+
+text-decoration:none;
+
+color:#0f7b4b;
+
+position:relative;
+
+transition:.35s;
+
+}
+
+.btnText::before{
+
+content:"➜";
+
+transition:.35s;
+
+}
+
+.btnText:hover::before{
+
+transform:translateX(8px);
+
+}
+
+.btnText::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-8px;
+
+width:0;
+
+height:3px;
+
+background:linear-gradient(90deg,#FFD700,#D4AF37);
+
+transition:.4s;
+
+border-radius:20px;
+
+}
+
+.btnText:hover{
+
+color:#D4AF37;
+
+transform:translateX(8px);
+
+}
+
+.btnText:hover::after{
+
+width:100%;
+
+}
+
+}/*=========================================
+        SCROLL
+=========================================*/
+
+.scrollDown{
+
+position:absolute;
+
+bottom:40px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:12px;
+
+font-size:15px;
+
+color:#666;
+
+animation:scrollFloat 2.5s infinite;
+
+}
+
+.scrollDown i{
+
+font-size:22px;
+
+color:var(--gold);
+
+}
+
+/*=========================================
+            CURSOR
+=========================================*/
+
+.cursor{
+
+position:fixed;
+
+width:24px;
+
+height:24px;
+
+border-radius:50%;
+
+pointer-events:none;
+
+background:radial-gradient(circle,#FFD700,#D4AF37);
+
+box-shadow:
+
+0 0 25px gold,
+
+0 0 60px gold,
+
+0 0 90px gold;
+
+transform:translate(-50%,-50%);
+
+z-index:999999;
+
+transition:
+
+transform .08s linear;
+
+}
+
+
+/*=========================================
+        PARTICULAS
+=========================================*/
+
+.goldParticles{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+.goldParticles span{
+
+position:absolute;
+
+bottom:-40px;
+
+background:gold;
+
+border-radius:50%;
+
+opacity:.6;
+
+animation:particleUp linear forwards;
+
+box-shadow:
+
+0 0 20px gold;
+
+}
+
+
+/*=========================================
+      NAV SCROLL
+=========================================*/
+
+.navScroll{
+
+background:rgba(255,255,255,.88);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+
+0 8px 35px rgba(0,0,0,.08);
+
+transition:.4s;
+
+}
+
+
+/*=========================================
+      LOADER
+=========================================*/
+
+#loader{
+
+position:fixed;
+
+width:100%;
+
+height:100vh;
+
+background:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+transition:1s;
+
+}
+
+.loaderLogo{
+
+font-size:120px;
+
+color:gold;
+
+animation:loaderRotate 2s infinite;
+
+}
+
+.loaded #loader{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+
+/*=========================================
+        PARTICULAS
+=========================================*/
+
+@keyframes particleUp{
+
+0%{
+
+transform:translateY(0);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+
+@keyframes loaderRotate{
+
+0%{
+
+transform:rotate(0);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/*=========================================
+        ESTRELLAS FUGACES
+=========================================*/
+
+.shootingStars{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.shootingStars span{
+
+position:absolute;
+
+width:3px;
+
+height:140px;
+
+background:linear-gradient(
+
+transparent,
+
+gold,
+
+white
+
+);
+
+opacity:.8;
+
+transform:rotate(35deg);
+
+animation:shoot 8s linear infinite;
+
+}
+
+.shootingStars span:nth-child(1){
+
+left:15%;
+
+animation-delay:0s;
+
+}
+
+.shootingStars span:nth-child(2){
+
+left:45%;
+
+animation-delay:2s;
+
+}
+
+.shootingStars span:nth-child(3){
+
+left:75%;
+
+animation-delay:4s;
+
+}
+
+.shootingStars span:nth-child(4){
+
+left:90%;
+
+animation-delay:6s;
+
+}
+
+@keyframes shoot{
+
+0%{
+
+top:-200px;
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+top:120%;
+
+left:120%;
+
+opacity:0;
+
+}
+
+}
+
+/*=========================================
+
+        FONDO PREMIUM
+
+=========================================*/
+
+.goldMesh{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+top:0;
+
+left:0;
+
+pointer-events:none;
+
+z-index:-8;
+
+background-image:
+
+linear-gradient(
+
+rgba(212,175,55,.04) 1px,
+
+transparent 1px),
+
+linear-gradient(
+
+90deg,
+
+rgba(212,175,55,.04) 1px,
+
+transparent 1px);
+
+background-size:80px 80px;
+
+animation:gridMove 30s linear infinite;
+
+}
+
+
+/*=========================================
+
+        LUZ DEL CURSOR
+
+=========================================*/
+
+.mouseLight{
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+border-radius:50%;
+
+pointer-events:none;
+
+background:radial-gradient(
+
+circle,
+
+rgba(255,215,0,.18),
+
+transparent 70%
+
+);
+
+filter:blur(60px);
+
+z-index:-3;
+
+transform:translate(-50%,-50%);
+
+}
+
+
+/*=========================================
+
+        FIGURAS
+
+=========================================*/
+
+.floatingShapes{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+top:0;
+
+left:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-6;
+
+}
+
+.shape{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(212,175,55,.08);
+
+backdrop-filter:blur(25px);
+
+box-shadow:
+
+0 0 50px rgba(255,215,0,.15);
+
+animation:floatShape linear infinite;
+
+}
+
+.s1{
+
+width:260px;
+
+height:260px;
+
+left:8%;
+
+top:12%;
+
+animation-duration:18s;
+
+}
+
+.s2{
+
+width:180px;
+
+height:180px;
+
+right:10%;
+
+top:20%;
+
+animation-duration:24s;
+
+}
+
+.s3{
+
+width:120px;
+
+height:120px;
+
+left:25%;
+
+bottom:10%;
+
+animation-duration:16s;
+
+}
+
+.s4{
+
+width:300px;
+
+height:300px;
+
+right:20%;
+
+bottom:8%;
+
+animation-duration:22s;
+
+}
+
+.s5{
+
+width:150px;
+
+height:150px;
+
+left:60%;
+
+top:60%;
+
+animation-duration:14s;
+
+}
+
+.s6{
+
+width:90px;
+
+height:90px;
+
+left:75%;
+
+top:15%;
+
+animation-duration:12s;
+
+}
+
+/*======================================
+        BACKGROUND CLOVER
+======================================*/
+
+.backgroundClover{
+
+position:absolute;
+
+right:-120px;
+
+top:40px;
+
+font-size:850px;
+
+font-family:serif;
+
+color:rgba(212,175,55,.045);
+
+pointer-events:none;
+
+user-select:none;
+
+z-index:-4;
+
+filter:blur(1px);
+
+animation:rotateClover 90s linear infinite;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+bottom:35px;
+
+transform:translateX(-50%);
+
+width:85%;
+
+height:1px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(212,175,55,.55),
+
+transparent
+
+);
+
+}
+
+/*=========================================
+
+            DISCO DORADO
+
+=========================================*/
+
+.goldDisc{
+
+position:absolute;
+
+width:420px;
+
+height:420px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,255,255,.95) 0%,
+
+#FFE89A 20%,
+
+#FFD700 45%,
+
+#D4AF37 70%,
+
+#9C6B00 100%
+
+);
+
+box-shadow:
+
+0 0 80px rgba(255,215,0,.35),
+
+0 0 180px rgba(255,215,0,.25),
+
+inset 0 0 40px rgba(255,255,255,.35);
+
+animation:
+
+goldDiscRotate 25s linear infinite;
+
+}
+
+
+/*=========================================
+
+      SEGUNDO DISCO
+
+=========================================*/
+
+.goldDisc2{
+
+position:absolute;
+
+width:320px;
+
+height:320px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+#fffef7,
+
+#FFD700,
+
+#B8860B
+
+);
+
+opacity:.35;
+
+filter:blur(25px);
+
+animation:
+
+goldPulse 5s ease infinite;
+
+}
+
+
+/*=========================================
+
+        GLOW
+
+=========================================*/
+
+.goldGlow{
+
+position:absolute;
+
+width:650px;
+
+height:650px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,215,0,.25),
+
+transparent 70%
+
+);
+
+filter:blur(50px);
+
+animation:
+
+glowScale 6s ease infinite;
+
+}
+
+/*==============================
+        ÓRBITAS
+===============================*/
+
+.orbit{
+
+position:absolute;
+
+border-radius:50%;
+
+border:1px solid rgba(212,175,55,.18);
+
+animation:rotateOrbit linear infinite;
+
+}
+
+.orbit1{
+
+width:500px;
+
+height:500px;
+
+animation-duration:22s;
+
+}
+
+.orbit2{
+
+width:620px;
+
+height:620px;
+
+animation-duration:32s;
+
+animation-direction:reverse;
+
+}
+
+.orbit3{
+
+width:720px;
+
+height:720px;
+
+animation-duration:42s;
+
+}
+
+.spark{
+
+position:absolute;
+
+width:10px;
+
+height:10px;
+
+background:#FFD700;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 12px #FFD700,
+
+0 0 25px #FFD700,
+
+0 0 45px #FFD700;
+
+animation:blink 2s infinite;
+
+}
+
+.spark1{
+
+top:70px;
+
+left:180px;
+
+}
+
+.spark2{
+
+top:120px;
+
+right:140px;
+
+animation-delay:.5s;
+
+}
+
+.spark3{
+
+bottom:150px;
+
+left:70px;
+
+animation-delay:1s;
+
+}
+
+.spark4{
+
+bottom:90px;
+
+right:90px;
+
+animation-delay:1.4s;
+
+}
+
+.spark5{
+
+top:260px;
+
+left:-20px;
+
+animation-delay:2s;
+
+}
+
+.spark6{
+
+top:260px;
+
+right:-20px;
+
+animation-delay:2.3s;
+
+}
+
+.spark7{
+
+top:40px;
+
+left:320px;
+
+animation-delay:.8s;
+
+}
+
+.spark8{
+
+bottom:40px;
+
+right:280px;
+
+animation-delay:1.8s;
+
+}
+
+/*======================================
+        MONEDA ORO
+======================================*/
+
+.goldCoin {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 30% 30%, #fff8cc, #FFD700 20%, #D4AF37 45%, #B8860B 70%, #8B6914);
+    box-shadow: 0 0 60px rgba(255,215,0,.45), 0 40px 90px rgba(0,0,0,.30), inset 0 8px 20px rgba(255,255,255,.60), inset 0 -12px 30px rgba(0,0,0,.30);
+    animation: coinFloat 6s ease-in-out infinite;
+    overflow: visible;
+}
+
+.goldCoin::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border-radius: 50%;
+    border: 8px solid rgba(255,255,255,.25);
+    box-shadow: 0 0 25px rgba(255,215,0,.40), inset 0 0 20px rgba(255,255,255,.20);
+    pointer-events: none;
+}
+
+/*======================================
+      TRÉBOL PRINCIPAL (MÁS GRANDE Y MÁS ABAJO)
+======================================*/
+
+.heroClover {
+    position: absolute !important;
+    top: 66% !important; /* Aumentado de 50% a 58% para moverlo hacia ABAJO */
+    left: 48% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 920px !important; /* Aumentado de 720px a 820px para hacerlo MÁS GRANDE */
+    max-width: none !important;
+    height: auto !important;
+    z-index: 20;
+    pointer-events: none;
+    filter: drop-shadow(0 18px 30px rgba(0,0,0,.35)) drop-shadow(0 0 40px rgba(255,215,0,.55));
+    animation: cloverFloat 6s ease-in-out infinite;
+}
+
+.coinGlow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,215,0,.25), transparent 70%);
+    filter: blur(60px);
+    animation: pulseGlow 4s ease infinite;
+}
+
+/*======================================
+      ESTILOS SECCIONES GENERALES
+======================================*/
+
+.sectionPadding {
+    padding: 100px 9% 60px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bgAlt {
+    background: rgba(255, 215, 0, 0.03);
+}
+
+.sectionTitle {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sectionTitle h2 {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: var(--goldDark);
+    margin-bottom: 8px;
+}
+
+.sectionTitle h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 45px;
+    color: #202020;
+}
+
+/* CARDS DE PROPUESTAS */
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transition: 0.4s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.25);
+}
+
+.cardIcon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.card h4 {
+    font-size: 22px;
+    color: #202020;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* MISIÓN */
+.misionContent {
+    max-width: 800px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* FORMULARIO DE OPINIÓN */
+.opinionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.opinionForm input,
+.opinionForm textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.opinionForm input:focus,
+.opinionForm textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
+}
+
+/*======================================
+     FOOTER Y BOTÓN FLOTANTE
+======================================*/
+
+.mainFooter {
+    background: #111111;
+    color: #ffffff;
+    padding: 40px 9% 20px;
+    text-align: center;
+    border-top: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.footerSub {
+    font-size: 14px;
+    color: #aaaaaa;
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+.footerSocial .socialLink {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #D4AF37;
+    font-size: 22px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.footerSocial .socialLink:hover {
+    background: #D4AF37;
+    color: #111111;
+    transform: translateY(-4px);
+}
+
+.footerBottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    font-size: 13px;
+    color: #888888;
+}
+
+/* BOTÓN WHATSAPP FLOTANTE */
+.whatsappFloat {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.whatsappFloat:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* Tooltip al pasar el mouse */
+.waTooltip {
+    position: absolute;
+    right: 70px;
+    background: #111;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.whatsappFloat:hover .waTooltip {
+    opacity: 1;
+}
+
+/*======================================
+    OPTIMIZACIÓN RESPONSIVE (MÓVILES)
+======================================*/
+
+@media (max-width: 992px) {
+    .goldCoin {
+        width: 320px !important;
+        height: 320px !important;
+    }
+
+    .heroClover {
+        width: 600px !important; /* Escala proporcional para tablet */
+        top: 56% !important;
+        left: 46% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .goldCoin {
+        width: 250px !important;
+        height: 250px !important;
+        margin: 20px auto 0;
+    }
+
+    .heroClover {
+        width: 480px !important; /* Escala ajustada para pantallas de celular */
+        top: 56% !important;
+        left: 45% !important;
+    }
+
+    .whatsappFloat {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .waTooltip {
+        display: none; /* Ocultar tooltip en celulares para no estorbar */
+    }
+}
