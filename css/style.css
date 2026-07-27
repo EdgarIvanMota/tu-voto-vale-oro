@@ -2162,3 +2162,81 @@ animation-delay:1.8s;
         display: none;
     }
 }
+
+/*======================================
+   FIX MÓVIL (CORRECCIÓN DE ENCIMADOS)
+======================================*/
+@media (max-width: 576px) {
+
+    /* 1. ACOMODAR NAVEGACIÓN Y LOGO */
+    nav {
+        position: relative !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 15px 5% !important;
+    }
+
+    nav ul {
+        gap: 20px !important;
+    }
+
+    /* 2. REORGANIZAR CONTENEDOR PRINCIPAL */
+    .heroContainer {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        text-align: center !important;
+    }
+
+    /* 3. REDUCIR TEXTOS PARA QUE NO CHOQUEN */
+    .heroLeft h1 {
+        font-size: 42px !important;
+        line-height: 1.1 !important;
+    }
+
+    .heroLeft h3 {
+        font-size: 26px !important;
+        letter-spacing: 2px !important;
+    }
+
+    .heroLeft p {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        margin-top: 15px !important;
+    }
+
+    /* 4. BOTONES EN COLUMNA (UNO DEBAJO DEL OTRO) */
+    .heroButtons {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        margin-top: 25px !important;
+    }
+
+    .btnGold, .btnText {
+        width: 100% !important;
+        max-width: 280px !important;
+        justify-content: center !important;
+        padding: 14px 20px !important;
+        font-size: 16px !important;
+    }
+
+    /* 5. AJUSTAR MONEDA Y TRÉBOL */
+    .heroRight {
+        height: 300px !important;
+        margin-top: 10px !important;
+    }
+
+    .goldCoin {
+        width: 200px !important;
+        height: 200px !important;
+        margin: 0 auto !important;
+    }
+
+    .heroClover {
+        width: 280px !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+}
