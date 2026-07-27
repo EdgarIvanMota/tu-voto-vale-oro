@@ -2097,29 +2097,57 @@ animation-delay:1.8s;
 ======================================*/
 
 @media (max-width: 992px) {
+    .heroContainer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .heroRight {
+        height: 500px;
+    }
+
     .goldCoin {
         width: 320px !important;
         height: 320px !important;
     }
 
     .heroClover {
-        width: 600px !important; /* Escala proporcional para tablet */
-        top: 56% !important;
-        left: 46% !important;
+        width: 550px !important; 
+        top: 50% !important;
+        left: 50% !important;
     }
 }
 
 @media (max-width: 576px) {
-    .goldCoin {
-        width: 250px !important;
-        height: 250px !important;
-        margin: 20px auto 0;
+    .heroRight {
+        height: 380px;
     }
 
+    .goldCoin {
+        width: 240px !important;
+        height: 240px !important;
+        margin: 0 auto;
+    }
+
+    /* FIX PARA EL TRÉBOL EN CELULARES EN VERTICAL */
     .heroClover {
-        width: 480px !important; /* Escala ajustada para pantallas de celular */
-        top: 56% !important;
-        left: 45% !important;
+        width: 360px !important; /* Tamaño controlado para no salir de pantalla */
+        top: 50% !important;     /* Centrado exacto sobre la moneda */
+        left: 50% !important;    /* Centrado horizontal */
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .heroLeft h1 {
+        font-size: 60px;
+    }
+
+    .heroLeft h3 {
+        font-size: 32px;
+        letter-spacing: 4px;
+    }
+
+    .heroLeft p {
+        font-size: 18px;
     }
 
     .whatsappFloat {
@@ -2131,6 +2159,6 @@ animation-delay:1.8s;
     }
     
     .waTooltip {
-        display: none; /* Ocultar tooltip en celulares para no estorbar */
+        display: none;
     }
 }
