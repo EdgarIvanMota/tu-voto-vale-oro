@@ -97,6 +97,53 @@ function agregarUsuario(texto){
 }
 
 //==============================
+// Botones de selección
+//==============================
+
+function mostrarOpciones(){
+
+    chatBody.innerHTML += `
+
+    <div class="opcionesChat">
+
+        <button onclick="seleccionarTipo('Propuesta')">
+            📄 Propuesta
+        </button>
+
+        <button onclick="seleccionarTipo('Comentario')">
+            💬 Comentario
+        </button>
+
+    </div>
+
+    `;
+
+    chatBody.scrollTop=chatBody.scrollHeight;
+
+}
+
+function seleccionarTipo(valor){
+
+    tipo=valor;
+
+    agregarUsuario(valor);
+
+    paso=3;
+
+
+    if(tipo==="Propuesta"){
+
+        agregarBot("Perfecto.<br><br>Escribe tu propuesta.");
+
+    }
+    else{
+
+        agregarBot("Perfecto.<br><br>Escribe tu comentario.");
+
+    }
+
+}
+//==============================
 
 chatEnviar.addEventListener("click",procesar);
 
@@ -130,8 +177,11 @@ function procesar(){
 
             paso=2;
 
-            agregarBot("Mucho gusto <b>"+nombre+"</b> 😊<br><br>¿Qué deseas enviar?<br><br>1️⃣ Propuesta<br>2️⃣ Comentario");
+            agregarBot(
+"Mucho gusto <b>"+nombre+"</b> 😊<br><br>¿Qué deseas enviar?"
+);
 
+mostrarOpciones();
         break;
 
         case 2:
