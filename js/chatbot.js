@@ -180,14 +180,50 @@ setTimeout(function () {
 
     agregarBot("📨 Enviando tu información...");
 
+
     setTimeout(function () {
 
-        chatForm.submit();
 
-    }, 1200);
+        fetch(chatForm.action, {
 
-}, 800);
-        break;
+            method: "POST",
+
+            body: new FormData(chatForm)
+
+        })
+
+        .then(response => {
+
+
+            agregarBot("✅ ¡Tu información fue enviada correctamente!");
+
+
+            setTimeout(function(){
+
+                agregarBot("Gracias por participar en la Planilla ORO VERDE 🌱");
+
+            },1000);
+
+
+        })
+
+        .catch(error => {
+
+
+            agregarBot("❌ Ocurrió un error al enviar la información.");
+
+            console.error("Error:", error);
+
+
+        });
+
+
+    },1200);
+
+
+},800);
+
+            break;
 
     }
 
