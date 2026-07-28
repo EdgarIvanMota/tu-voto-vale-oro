@@ -10,6 +10,16 @@ const chatBody = document.getElementById("chatBody");
 const chatInput = document.getElementById("chatInput");
 const chatEnviar = document.getElementById("chatEnviar");
 
+//==============================
+// Formulario oculto
+//==============================
+
+const chatForm = document.getElementById("chatForm");
+
+const correoNombre = document.getElementById("correoNombre");
+const correoTipo = document.getElementById("correoTipo");
+const correoMensaje = document.getElementById("correoMensaje");
+
 let paso = 1;
 
 let nombre = "";
@@ -160,8 +170,23 @@ function procesar(){
 
             agregarBot("✅ Gracias <b>"+nombre+"</b>.<br><br>Tu "+tipo.toLowerCase()+" está lista para enviarse.");
 
-            console.log(nombre,tipo,mensaje);
+            // Llenar el formulario oculto
+correoNombre.value = nombre;
+correoTipo.value = tipo;
+correoMensaje.value = mensaje;
 
+// Esperar un momento para que el usuario lea el mensaje
+setTimeout(function () {
+
+    agregarBot("📨 Enviando tu información...");
+
+    setTimeout(function () {
+
+        chatForm.submit();
+
+    }, 1200);
+
+}, 800);
         break;
 
     }
