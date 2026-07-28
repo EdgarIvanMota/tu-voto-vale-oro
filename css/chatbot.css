@@ -233,3 +233,33 @@ CHATBOT ORO VERDE
     line-height:1.5;
 
 }
+
+/*==============================
+  Botones de selección del chat
+==============================*/
+
+.opcionesChat{
+    display:flex;
+    gap:10px;
+    margin:10px;
+}
+
+
+.opcionesChat button{
+
+    padding:10px 15px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:#008f39;
+    color:white;
+    font-size:14px;
+
+}
+
+
+.opcionesChat button:hover{
+
+    opacity:.8;
+
+}
