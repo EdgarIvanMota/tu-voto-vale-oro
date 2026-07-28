@@ -254,6 +254,12 @@ setTimeout(function () {
 
             },1000);
 
+            // Cerrar chatbot después de unos segundos
+setTimeout(function(){
+
+    chatOverlay.style.display="none";
+
+},4000);
 
         })
 
