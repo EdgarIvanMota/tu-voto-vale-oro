@@ -197,3 +197,39 @@ CHATBOT ORO VERDE
     background:#1ea952;
 
 }
+
+.bot{
+
+    background:white;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+    width:80%;
+
+    line-height:1.5;
+
+}
+
+.user{
+
+    background:#DCF8C6;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+    margin-left:auto;
+
+    width:80%;
+
+    text-align:right;
+
+    line-height:1.5;
+
+}
